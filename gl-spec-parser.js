@@ -24,7 +24,7 @@ function Command(attrs) {
 
       var proto = node.named('proto');
       obj.name = proto.textOf('name');
-      obj.type = proto.textOf('ptype') || node.child(0).text();
+      obj.type = proto.textOf('ptype', proto.child(0).text());
 
       obj.params = node.named('param', true).map(function(pel) {
 
